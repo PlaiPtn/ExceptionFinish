@@ -1,12 +1,16 @@
-public class CheckedData {
-    public boolean checked(String data){
-        String[] arrData = data.split(" ");
-        if (arrData.length < 6) {
-            throw new  WrongLenDataException("Неверная длинна данных");
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class CheckedData{
+
+    MapStr map = new MapStr();
+    String msg = map.msg;
+    public boolean checkedText(String text){
+        String[] arr = text.split(" ");
+        if (arr.length < map.getLenMap()){
+            return false;
+        } else {
+
         }
-        return true;
-//        for (int i = 0; i < arrData.length; i++) {
-//            pass;
-//        }
     }
 }

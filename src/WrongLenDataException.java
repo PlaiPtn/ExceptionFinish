@@ -1,5 +1,5 @@
-public class WrongLenDataException extends RuntimeException{
-    public WrongLenDataException(String text){
-        super(text);
+public class WrongLenDataException extends ArrayIndexOutOfBoundsException {
+    public WrongLenDataException(){
+        super("Неверная длинна данных");
     }
 }

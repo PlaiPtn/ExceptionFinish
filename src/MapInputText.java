@@ -1,12 +1,13 @@
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class MapStr {
+public class MapInputText {
 
     Map<String, String> map = new LinkedHashMap<>();
-    String msg = "Введите текст согласно образцу через пробел: " +
-            "Фамилия Имя Отчество дата_рождения номер_телефона пол";
-    public MapStr() {
+    String msg = "Введите данные в одну строку через пробел: " +
+            "Фамилия Имя Отчество дата_рождения(формата dd.mm.yyyy) " +
+            "номер_телефона(7 цифр без разделителя) пол(символ латиницей f или m)";
+    public MapInputText() {
         map.put("Имя", " ");
         map.put("Фамилия", " ");
         map.put("Отчество", " ");
@@ -24,4 +25,6 @@ public class MapStr {
         map.put("Пол", arr[5]);
         return map;
     }
+
+
 }

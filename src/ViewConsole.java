@@ -3,12 +3,12 @@ import java.util.Map;
 
 public class ViewConsole {
 
-    CheckedData check = new CheckedData();
+    Controller controller = new Controller();
     public void run(){
-        System.out.println(check.msg);
+        System.out.println(controller.startMsg());
         InputClientText clientData = new InputClientText();
-        String inputText = clientData.clientText();
-        check.checkedText(inputText);
+        String[] inputText = clientData.clientText().split(" ");
+        controller.checked(inputText);
 
 
     }

@@ -8,7 +8,7 @@ public class ViewConsole {
         System.out.println(check.msg);
         InputClientText clientData = new InputClientText();
         String inputText = clientData.clientText();
-        System.out.println(check.checkedText(inputText));
+        check.checkedText(inputText);
 
 
     }

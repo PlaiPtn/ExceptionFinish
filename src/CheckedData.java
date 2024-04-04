@@ -3,24 +3,25 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class CheckedData implements CheckedInt{
+public class CheckedData implements CheckedInter {
 
-    MapInputText mapStr = new MapInputText();
-    String msg = mapStr.msg;
+    MapInputText mapStr;
+    DateFormat df;
+    Date todayDate;
 
-    DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
-    Date todayDate = new Date();
-
-
-
+    public CheckedData() {
+        this.mapStr = new MapInputText();;
+        this.df = new SimpleDateFormat("dd.MM.yyyy");;
+        this.todayDate = new Date();
+    }
 
     public void checkedText(String[] arrText){
         checkedLen(arrText);
         checkedName(arrText[0]);
         checkedSurname(arrText[1]);
         checkedPatronymic(arrText[2]);
-        checkedNumbTelephone(arrText[3]);
-        checkedBirthday(arrText[4]);
+        checkedBirthday(arrText[3]);
+        checkedNumbTelephone(arrText[4]);
         checkedGender(arrText[5]);
 
     }
@@ -37,7 +38,7 @@ public class CheckedData implements CheckedInt{
         char[] charsText = text.toCharArray();
         for (char c : charsText) {
             if (!Character.isLetter(c)) {
-                throw new WrongDataException("Имя");
+                throw new WrongDataException("'Имя'");
             }
         }
     }
@@ -47,7 +48,7 @@ public class CheckedData implements CheckedInt{
         char[] charsText = text.toCharArray();
         for (char c : charsText) {
             if (!Character.isLetter(c)) {
-                throw new WrongDataException("Фамилия");
+                throw new WrongDataException("'Фамилия'");
             }
         }
 
@@ -58,7 +59,7 @@ public class CheckedData implements CheckedInt{
         char[] charsText = text.toCharArray();
         for (char c : charsText) {
             if (!Character.isLetter(c)) {
-                throw new WrongDataException("Отчество");
+                throw new WrongDataException("'Отчество'");
             }
         }
     }
@@ -66,14 +67,14 @@ public class CheckedData implements CheckedInt{
     @Override
     public void checkedNumbTelephone(String text) {
         if(text.length() != 7){
-            throw new WrongDataException("Номер телефона");
+            throw new WrongDataException("'Номер телефона'");
         }
         else {
             try {
                 Integer.valueOf(text);
             }
             catch (NumberFormatException e) {
-                throw new WrongDataException("Номер телефона");
+                throw new WrongDataException("'Номер телефона'");
             }
         }
 
@@ -86,14 +87,14 @@ public class CheckedData implements CheckedInt{
             Date Birthday = df.parse(text);
             if(todayDate.before(Birthday)) throw new Exception();
         } catch (Exception e) {
-            throw new WrongDataException("День рождения");
+            throw new WrongDataException("'День рождения'");
         }
     }
 
     @Override
     public void checkedGender(String text) {
         if(!text.equals("m") && !text.equals("f")){
-            throw new WrongDataException("Пол");
+            throw new WrongDataException("'Пол'");
         }
     }
 }

@@ -1,4 +1,4 @@
-public interface CheckedInt {
+public interface CheckedInter {
     void checkedLen(String[] text);
     void checkedName(String text);
     void checkedSurname(String text);

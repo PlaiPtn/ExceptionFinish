@@ -4,7 +4,7 @@ import java.util.Map;
 public class MapInputText {
 
     Map<String, String> map = new LinkedHashMap<>();
-    String msg = "Введите данные в одну строку через пробел: " +
+    public String msg = "Введите данные в одну строку через пробел: " +
             "Фамилия Имя Отчество дата_рождения(формата dd.mm.yyyy) " +
             "номер_телефона(7 цифр без разделителя) пол(символ латиницей f или m)";
     public MapInputText() {

@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
 public class WorkWithFile{
     File file = new File("src/catalog");
     private final String[] arrText;

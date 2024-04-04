@@ -3,20 +3,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class CheckedData implements CheckedInter {
+public class CheckedData implements CheckedInterface {
 
-    MapInputText mapStr;
     DateFormat df;
     Date todayDate;
 
     public CheckedData() {
-        this.mapStr = new MapInputText();;
         this.df = new SimpleDateFormat("dd.MM.yyyy");;
         this.todayDate = new Date();
     }
 
-    public void checkedText(String[] arrText){
-        checkedLen(arrText);
+    public void checkedText(String[] arrText, int sizeText){
+        checkedLen(arrText, sizeText);
         checkedName(arrText[0]);
         checkedSurname(arrText[1]);
         checkedPatronymic(arrText[2]);
@@ -27,8 +25,8 @@ public class CheckedData implements CheckedInter {
     }
 
     @Override
-    public void checkedLen(String[] text) {
-        if(text.length != mapStr.map.size()){
+    public void checkedLen(String[] text, int sizeText) {
+        if(text.length != sizeText){
             throw new WrongLenDataException();
         }
     }

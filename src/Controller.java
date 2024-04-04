@@ -2,21 +2,25 @@ import java.util.Scanner;
 
 public class Controller {
     Scanner scanner;
-    MapInputText mapStr;
+    ConstInputText cInpText;
     CheckedData checkedData;
     WorkWithFile wFile;
 
     public Controller() {
         this.scanner = new Scanner(System.in);
-        this.mapStr = new MapInputText();
         this.checkedData = new CheckedData();
+        this.cInpText = new ConstInputText();
     }
 
     public String startMsg(){
-        return mapStr.msg;
+        return cInpText.getMsg();
     }
-    public void checked(String[] arr){
-        checkedData.checkedText(arr);
+
+    public int sizeText(){
+        return cInpText.getLenArrText();
+    }
+    public void checked(String[] arr, int sizeText){
+        checkedData.checkedText(arr, sizeText);
     }
 
     public String[] clientText(){
